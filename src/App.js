@@ -5,6 +5,8 @@ import './App.css';
 import HomePage from './pages/Home/HomePage.js'
 import NavbarComponent from './components/NavbarComponent/NavbarComponent.js'
 import BuscarComponent from './components/BuscarComponent/BuscarComponent.js'
+import FooterComponent from './components/FooterComponent/FooterComponent.js'
+
 
 function App() {
   return (
@@ -25,6 +27,10 @@ function App() {
             <Route path="/buscar" element={<BuscarComponent />} />
           </Routes>
         
+      </div>
+      <div className="footers">
+        
+        <FooterComponent/>
       </div>
 
 
