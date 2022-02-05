@@ -1,1 +1,40 @@
-
+:root{
+    --main-bg-color: #2C3333;
+    --second-bg-color: #395B64;
+    --third-bg-color:#2666CF;
+    --forth-bg-color:#a8dadc;
+    --fifth-bg-color:#473964;
+    --sixth-bg-color:#31332c;
+    --marvel-color:#EA2328;
+    --font-main-color:#ffffff;
+}
+@font-face {
+    font-family: 'komika_titleregular';
+    src: url('./assets/font/KomikaTitle-webfont.woff') format('woff');   
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'komika_title_-_axisregular';
+    src: url('./assets/font/KomikaTitle-Axis-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'komika_title_-_kapsregular';
+    src: url('./assets/font/KomikaTitle-Kaps-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'komika_title_-_paintregular';
+    src: url('./assets/font/KomikaTitle-Paint-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'komika_title_-_wideregular';
+    src: url('./assets/font/KomikaTitle-Wide-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,14 @@
+
+
+.flexing-sidebar{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    font-family: comicFont;
+}
+
+#marvel-logo{
+    height:70px;
+    margin: 5px;
+    box-shadow: 0px 0px 5px 5px grey;    
+}
