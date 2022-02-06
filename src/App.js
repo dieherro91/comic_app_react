@@ -8,7 +8,11 @@ import BuscarComponent from './components/BuscarComponent/BuscarComponent.js'
 import FooterComponent from './components/FooterComponent/FooterComponent.js'
 
 
+
 function App() {
+  //const cosas =obtenerComics();
+  //const asd=ObtenerComics()
+  
   return (
     <Router>
     <div className="App">

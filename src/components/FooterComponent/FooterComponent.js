@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGithubSquare,FaLinkedin } from "react-icons/fa";
 
 
 import './FooterComponent.css'
@@ -7,7 +8,16 @@ import './FooterComponent.css'
 function FooterComponent() {
     return (
         <div className="flexing-footer">
-            <h6>Hallo</h6>
+            <p className="texto-footer">Comics App Techno</p>
+
+            <div className="texto-footer">
+                <a href='https://github.com/dieherro91/comic_app_react'>
+                    <FaGithubSquare id="githubs"/>
+                </a>
+                <a href='https://www.linkedin.com/in/diego-hernando-romero-roa-6744b7195/'>
+                    <FaLinkedin id="linkedin"/>
+                </a>
+            </div>
         </div>
     )
 }
