@@ -1,0 +1,85 @@
+
+
+.auth-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-top: 0px;
+    font-family: 'komika_title_-_paintregular';
+    color: var(--font-main-color);
+}
+
+.auth-card{
+    height: 410px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);
+    
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 5px 5px grey;   
+}
+#dino{
+    width: 75%;
+    
+}
+.input-auth{
+    width: 80%;
+    margin-bottom: 10px;
+    /* font-family: "komika_title_-_wideregular"; */
+}
+.section-auths{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+#bottom-auth{
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.button-auths{
+    background-color: var(--marvel-color);
+    font-family: "komika_title_-_wideregular";
+    color: var(--font-main-color);
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 1px grey;
+    
+}
+.button-auths{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button-auths:after {
+    content: '';
+    position: absolute;
+    opacity: 0;  
+    top: 14px;
+}
+.button-auths:hover{
+    padding-right: 4px;
+    padding-left:8px;
+}
+
+.button-auths:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+hr{
+    width: 100%;
+}
+/* .toast-success-container {
+    color: ;
+} */
+.toastify__progress--success { background-color:rgb(125, 20, 185) !important; }
+.toast-success-container { background-color:rgb(125, 20, 185) !important; }

@@ -3,7 +3,10 @@ import crypto from "crypto-js";
 //import { functions } from 'firebase-functions'
 //const functions = require('firebase-functions');
 //import * as functions from 'firebase-functions';
-
+//import {functions} from 'firebase/functions';
+// import  functions from 'firebase-functions'
+// console.log("adasdad")
+//     console.log(functions.config().comics.nopublic)
 export const ObtenerComics= ()=>{
     //const [comicData, setComicData]=useState("");
 
