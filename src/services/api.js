@@ -1,6 +1,6 @@
-import axios from "axios";
+
 import crypto from "crypto-js";
-import { useState } from "react";
+
 
 
 export const ObtenerComics= ()=>{
@@ -12,6 +12,13 @@ export const ObtenerComics= ()=>{
         method: 'GET',
         url: 'http://gateway.marvel.com/v1/public/comics',
         params: {
+          format:'comic',
+          formatType:'comic',
+          noVariants:'false',
+          dateDescriptor:'thisMonth',
+          
+          orderBy:'onsaleDate',
+          limit:'40',
           ts: timestamp,
           apikey: process.env.REACT_APP_PUBLIC_KEY,
           hash: hashs
@@ -19,3 +26,6 @@ export const ObtenerComics= ()=>{
     };
     return options;
 };
+
+
+//format=comic&formatType=comic&noVariants=false&dateDescriptor=thisMonth&hasDigitalIssue=true&orderBy=onsaleDate&limit=10&apikey=

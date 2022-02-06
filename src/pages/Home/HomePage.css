@@ -8,13 +8,13 @@
 
     
 }
-.images-slider{
-    width: 60vw;
-    object-fit:fill; 
-    z-index: 1;
-}
+
 .alice-carousel{
-    width: 60vw;
+    width: 95%;
+    height: 67vh;
+    margin-left: 60px;
+    /* margin-right: 100px; */
+    
 }
 
 #title-home{
