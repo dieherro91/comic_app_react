@@ -1,7 +1,8 @@
 
 import crypto from "crypto-js";
-
-
+//import { functions } from 'firebase-functions'
+//const functions = require('firebase-functions');
+//import * as functions from 'firebase-functions';
 
 export const ObtenerComics= ()=>{
     //const [comicData, setComicData]=useState("");
@@ -16,7 +17,6 @@ export const ObtenerComics= ()=>{
           formatType:'comic',
           noVariants:'false',
           dateDescriptor:'thisMonth',
-          
           orderBy:'onsaleDate',
           limit:'40',
           ts: timestamp,
