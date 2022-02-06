@@ -2,7 +2,18 @@
 
 .flexing-footer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-family: comicFont;
+}
+.texto-footer{
+    margin: 0px 20px 0px 20px;
+    font-family: "komika_title_-_kapsregular";
+    color: var(--font-main-color);
+    font-size: 1rem;
+
+}
+#linkedin, #githubs{
+    fill: var(--font-main-color);
+    width: 20px;
 }
