@@ -1,0 +1,38 @@
+.button-logout{
+    background-color: var(--third-bg-color);
+    width: 7rem;
+    height: 3rem;
+    box-shadow: 0px 0px 5px 5px grey;
+    border-radius: 10px 100px / 120px;
+    font-family: "komika_title_-_wideregular";
+    color: var(--font-main-color);
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    
+
+}
+
+.button-logout{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.button-logout:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;  
+    top: 14px;
+}  
+
+.button-logout:hover{
+    padding-right: 24px;
+    padding-left:8px;
+}
+
+.button-logout:hover:after {
+    opacity: 1;
+    right: 10px;
+}

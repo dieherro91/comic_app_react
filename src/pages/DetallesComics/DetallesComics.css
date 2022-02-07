@@ -1,0 +1,89 @@
+
+#title-detail{
+    font-size: 2rem;
+    margin: 15px;
+    font-family: 'komika_title_-_paintregular';
+    color: var(--font-main-color);
+}
+
+.detail-container{
+    display:flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    font-family: 'komika_title_-_axisregular';
+
+}
+.detail-subcontainer{
+    display:flex;
+    height: 100%;
+    flex-direction: rows;
+    justify-content:center;
+    align-items: center;
+}
+.image-unique{
+    width: 250px;
+    margin: 20px;
+}
+.test-detail{
+    display:flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:space-between;
+}
+.list-variants{
+    height: 200px;
+    width: 100%;
+    overflow-y:scroll;
+}
+.list-variants::-webkit-scrollbar {
+    width: 3px;               /* width of the entire scrollbar */
+}
+
+.list-variants::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);        /* color of the tracking area */
+}
+
+.list-variants::-webkit-scrollbar-thumb {
+    background-color: blue;    /* color of the scroll thumb */
+    border-radius: 2px;       /* roundness of the scroll thumb */
+    border: 1px solid linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);  /* creates padding around scroll thumb */
+}
+
+
+
+.titulos{
+    margin: 0px;
+}
+.link-variants{
+    color:var(--font-main-color);
+    font-family: 'komika_title_-_axisregular';
+}
+.link-variants-oficial{
+    color: var(--third-bg-color) !important;
+    font-family: 'komika_title_-_axisregular';
+}
+.link-variants:link {
+    text-decoration: none;
+}
+
+.link-variants:visited {
+    text-decoration: none;
+}
+
+.link-variants:hover {
+    text-decoration: underline;
+}
+
+.link-variants:active {
+    text-decoration: underline;
+}
+
+.footer-detail{
+    display:flex;
+    width: 100%;
+    align-items:center;
+    justify-content:space-around;
+}
