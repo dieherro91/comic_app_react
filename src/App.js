@@ -11,7 +11,8 @@ import AuthenticationMail from './pages/AuthenticationMail/AuthenticationMail.js
 //import {useFirebaseApp} from 'reactfire'
 import FavoritesComics from "./pages/Favorites/FavoritesComics";
 import DetallesComics from "./pages/DetallesComics/DetallesComics";
-
+import SearchByCharacter from "./pages/SearchByCharacter/SearchByCharacter";
+import SearchByComic from "./pages/SearchByComic/SearchByComic";
 function App() {
   //const firebase=useFirebaseApp();
   //const cosas =obtenerComics();
@@ -33,7 +34,8 @@ function App() {
           <Routes>
             <Route path="" element={<HomePage />} />
             <Route path="/" element={<HomePage />} />
-            <Route path="/buscar" element={<BuscarComponent />} />
+            <Route path="/SearchByCharacter" element={<SearchByCharacter />} />
+            <Route path="/SearchByComic" element={<SearchByComic />} />
             <Route path="/Authentication" element={<AuthenticationMail/>}/>
             <Route path="/FavoritesComics" element={<FavoritesComics/>}/>
             <Route path="/Details/:id" element={<DetallesComics/>}/>

@@ -25,8 +25,9 @@ function NavbarComponent() {
             <Link to='/'>
                 <img id="marvel-logo" src={logoMarvel} alt="logoMarvel" />
             </Link>
-            <Link to="/Buscar">Buscar caracter</Link>
-            <Link to="/FavoritesComics">Favoritos</Link>
+            <Link className="nav-links" to="/SearchByCharacter">Characters</Link>
+            <Link className="nav-links" to="/SearchByComic">Comics</Link>
+            <Link className="nav-links" to="/FavoritesComics">Favorites</Link>
 
 
 

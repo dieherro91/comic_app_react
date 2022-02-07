@@ -81,7 +81,7 @@ function HomePage() {
     return (
         <div className="flexing-home">
 
-            <h1 id="title-home">The lastest comics </h1>
+            <h1 id="title-home">Lastest comics </h1>
 
 
             {
