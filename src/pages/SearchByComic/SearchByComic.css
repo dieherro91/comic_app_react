@@ -1,13 +1,11 @@
 
 
 .mainContainerSearch{
-    
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     font-family: 'komika_titleregular';
-    /* background-color: aquamarine; */
 }
 .search{
     width: 100%;
@@ -15,7 +13,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color:rgb(223, 26, 26); */
 }
 .ContainerContent{
     width: 100%;
@@ -24,21 +21,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    /* background-color: rgb(255, 166, 0); */
     overflow-y: scroll;
 }
 .ContainerContent::-webkit-scrollbar {
-    width: 5px;             /* width of the entire scrollbar */
+    width: 5px;
 }
 
 .ContainerContent::-webkit-scrollbar-track {
-    background: linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);        /* color of the tracking area */
+    background: linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);
 }
 
 .ContainerContent::-webkit-scrollbar-thumb {
-    background-color: black;    /* color of the scroll thumb */
-    border-radius: 1px;       /* roundness of the scroll thumb */
-    border: 1px solid linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);  /* creates padding around scroll thumb */
+    background-color: black;
+    border-radius: 1px;
+    border: 1px solid linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);
 }
 .initial-page{
     width: 100%;
@@ -46,11 +42,6 @@
     display: flex;
     flex-direction: column;
     align-items: center; 
-    /* background-color: aquamarine; */
-    
-    
-    
-
 }
 #kapow{
     width: 30%;
@@ -61,4 +52,24 @@
 }
 .cards-search{
     margin:10px;
+}
+.button-search{
+    height: 25px;
+    width: 70px;
+    text-align: center;
+    background-color: var(--marvel-color);
+    box-shadow: 0px 0px 3px 3px grey;
+    border-radius: 120px /  10px 100px;
+    cursor:pointer;
+}
+.input-search{
+    background-color: rgba(163, 79, 46, 0.76);
+    border-color: rgba(40, 40, 177, 0.63);
+    border-radius: 10px;
+    color:aliceblue;
+    font-size: 1rem;
+    text-align: center;
+    margin:10px;
+    height: 25px;
+    box-shadow: 0px 0px 3px 3px grey;
 }

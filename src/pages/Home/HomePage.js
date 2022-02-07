@@ -1,17 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
 import axios from "axios";
 import ReactLoading from "react-loading";
 
-import './HomePage.css'
-import { ObtenerComics } from '../../services/api.js'
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+
 import CardComponent from "../../components/CardComponent/CardComponent";
-
-//import AwsSliderStyles from 'react-awesome-slider/src/styles.scss';
-//const handleDragStart = (e) => e.preventDefault();
-
-
+import { ObtenerComics } from '../../services/api.js'
+import './HomePage.css'
 
 
 function HomePage() {
@@ -35,8 +31,6 @@ function HomePage() {
             search()
         } else {
             if (logos.length === 0) {
-                // console.log("cositas")
-                // console.log(comicData)
                 const comicsHome = [];
                 setDatasCard(false);
                 for (let i = 0; i < comicData.length; i++) {
@@ -46,7 +40,6 @@ function HomePage() {
                             'title': comicData[i].title,
                             'imagen': `${comicData[i].images[0].path}/portrait_uncanny.${comicData[i].images[0].extension}`,
                             'url': comicData[i].urls[0].url
-
                         });
                     };
                     logos.push(<CardComponent
@@ -57,16 +50,9 @@ function HomePage() {
 
                 };
                 setDatasCard(true);
-                console.log(datasCard)
-                console.log("cambioDatas")
-                console.log(comicsHome)
             }
         }
-
     }, [comicData, datasCard, logos]);
-
-    console.log(comicData)
-
 
     if (comicData === "") {
         return (<>
@@ -83,7 +69,6 @@ function HomePage() {
 
             <h1 id="title-home">Lastest comics </h1>
 
-
             {
                 datasCard === false ? (
                     <>
@@ -91,9 +76,6 @@ function HomePage() {
                             <div> cargando imagenes... </div>
                             <ReactLoading type="spinningBubbles" color="#ffffff" height="900" width="900" />
                         </div>
-
-
-
                     </>)
                     : (
                         <>
@@ -125,9 +107,6 @@ function HomePage() {
                             />
                         </>)
             }
-
-
-
 
         </div>
     )

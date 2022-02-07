@@ -3,8 +3,13 @@
 
 .buttonFavoritet{
     margin-left: 30px;
+    height: 35px;
+    width: 140px;
+    text-align: center;
+    background-color: var(--marvel-color);
+    box-shadow: 0px 0px 3px 3px grey;
+    border-radius: 120px   10px /100px;
+    color:var(--font-main-color);
+    cursor:pointer;
 }
-.buttonFavoritet:active .btn.active{
-    background-color:green;
-    outline: none;
-  }
+

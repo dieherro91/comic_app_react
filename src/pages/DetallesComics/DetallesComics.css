@@ -39,17 +39,17 @@
     overflow-y:scroll;
 }
 .list-variants::-webkit-scrollbar {
-    width: 3px;               /* width of the entire scrollbar */
+    width: 3px;             
 }
 
 .list-variants::-webkit-scrollbar-track {
-    background: linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);        /* color of the tracking area */
+    background: linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);     
 }
 
 .list-variants::-webkit-scrollbar-thumb {
-    background-color: blue;    /* color of the scroll thumb */
-    border-radius: 2px;       /* roundness of the scroll thumb */
-    border: 1px solid linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);  /* creates padding around scroll thumb */
+    background-color: blue;   
+    border-radius: 2px;      
+    border: 1px solid linear-gradient(180deg, var(--fifth-bg-color) 31%, var(--sixth-bg-color) 86%);  
 }
 
 

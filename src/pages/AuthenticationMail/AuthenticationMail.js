@@ -7,15 +7,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 import { auth } from "../../firebase/firebase.init";
-import './AuthenticationMail.css'
 import dino from '../../assets/images/pow-1601674.png'
+import './AuthenticationMail.css'
 
 function AuthenticationMail() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const [isRegister, setIsRegister] = useState(false);
-    //const [user,setUser]=useState({});
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -28,54 +26,44 @@ function AuthenticationMail() {
             }
         })
     }, [])
+
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     };
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-
     const handleSignIn = () => {
         signInWithEmailAndPassword(auth, email, password).then(() => {
             toast.success("Sign Complete");
             navigate('/')
         }).catch((err) => {
-            //toast("Error Login");
             alert(err.message)
-
         })
-    }
+    };
 
-    const handleRegister=()=>{
-        createUserWithEmailAndPassword(auth,email,password).then(()=>{
+    const handleRegister = () => {
+        createUserWithEmailAndPassword(auth, email, password).then(() => {
             toast.success("User Register Complete please Log In");
-            //window.location.reload();
             setIsRegister(false);
-            
-
-        }).catch((err)=>{
-            //toast("Error in the register");
+        }).catch((err) => {
             alert(err.message)
         })
-    }
+    };
 
     const handleGoogleSignIn = () => {
-
         const provider = new GoogleAuthProvider();
-
         signInWithPopup(auth, provider).then(result => {
             //setUser(result.user)
             toast.success("Sign Complete");
             navigate('/')
-            console.log(result.user)
-
+            
         }).catch((error) => {
             console.log(error.message)
         });
+    };
 
-    }
 
-    
     return (
         <div className='auth-container'>
 
@@ -84,8 +72,6 @@ function AuthenticationMail() {
             </>) : (<>
                 <h1>Sign In</h1>
             </>)}
-
-
 
             <div className='auth-card'>
 
@@ -100,8 +86,6 @@ function AuthenticationMail() {
                     </>) : (<>
                         <button className='button-auths' onClick={handleSignIn}>Log In</button>
                     </>)}
-
-
                     <hr />
                 </div>
 
@@ -113,25 +97,17 @@ function AuthenticationMail() {
                 {isRegister ? (<>
                     <label>I have an account</label>
                     <div id='bottom-auth' className='section-auths'>
-
-                        
                         <button className='button-auths' onClick={() => setIsRegister(false)}>Sign in</button>
-
                     </div>
                 </>) : (<>
+
                     <label>Sign up with</label>
                     <div id='bottom-auth' className='section-auths'>
 
                         <button className='button-auths' onClick={handleGoogleSignIn}>Google</button>
                         <button className='button-auths' onClick={() => setIsRegister(true)}>e-mail</button>
-
                     </div>
                 </>)}
-
-
-
-
-
             </div>
             <ToastContainer position="top-center"
                             autoClose={3000}
@@ -142,7 +118,7 @@ function AuthenticationMail() {
                             pauseOnFocusLoss
                             draggable
                             pauseOnHover
-            />
+                        />
         </div>
     )
 }

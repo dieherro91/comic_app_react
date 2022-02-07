@@ -4,17 +4,13 @@
     display: flex;
     flex-direction: column;
     justify-content:center;
-    align-items: center;
-
-    
+    align-items: center;  
 }
 
 .alice-carousel{
     width: 95%;
     height: 67vh;
-    margin-left: 60px;
-    /* margin-right: 100px; */
-    
+    margin-left: 60px;    
 }
 
 #title-home{
