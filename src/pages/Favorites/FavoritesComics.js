@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './FavoritesComics.css'
-//import {uid} from 'uid';
-import { uid } from 'uid'
-import { set, ref, onValue } from 'firebase/database';
+
+import { ref, onValue } from 'firebase/database';
 import { auth, db } from '../../firebase/firebase.init';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import CardComponent from '../../components/CardComponent/CardComponent';
 
 
 function FavoritesComics() {
-    
+    const [listaFav,serListaFav]=useState([])
     const navigate = useNavigate();
 
-    var cosas={};
+    var cosas=[];
 
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
@@ -20,13 +22,29 @@ function FavoritesComics() {
                 onValue(ref(db, `favorites/${auth.currentUser.uid}`), (snapshot) => {
                     const data = snapshot.val();
                     if (data !== null) {
-                        cosas=data;
+                        cosas=[data];
                         console.log("las cosas son: ", cosas)
                     }
                 })
+                // for(let cos in cosas[0]){
 
+                // }
+                //
+                var listaFavoritas=[]
+                Object.keys(cosas[0]).map(function(keyName, keyIndex) {
+                    listaFavoritas.push(cosas[0][keyName])
+                    return 1;
+                    // use keyName to get current key's name
+                    // and a[keyName] to get its value
+                    
+                });
+                serListaFav(listaFavoritas)
+                  
+                //console.log( "tipos",typeof )
                 
             } else {
+                //
+                toast.warning("please log in")
                 navigate("/")
             }
             // setTodos(cosas);
@@ -34,20 +52,37 @@ function FavoritesComics() {
         })
     }, [])
     
-    const objectos={'212312':'htttpasdasd','212312w':'htttpasdeasd','2123qe12':'htwettpasdasd'}
-
-    const writeFavoritesDB = () => {
-        
-        const uidd =uid();
-        set(ref(db, `favorites/${auth.currentUser.uid}`), objectos)
-        
-    }
     
     return (<>
-        <div>
+        
+        <div className="mainContainerFavorite">
+        <ToastContainer position="top-center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+            <div className="Favorite">
+                <h2>Your favorites comics</h2>
+                
 
-            <button onClick={writeFavoritesDB}>subir</button>
+            </div>
 
+            <div className="ContainerContentFavorite">
+                
+            {listaFav.map((comic) => (
+                            <CardComponent className="cards-search" key={comic.id} Objeto={comic} />
+                        ))} 
+                        
+           
+
+
+
+            </div>
         </div>
     </>)
 }

@@ -1,0 +1,11 @@
+.pagenot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'komika_titleregular';
+}
+#notFnd{
+    height: 50vh;
+    margin: 0px;
+}
