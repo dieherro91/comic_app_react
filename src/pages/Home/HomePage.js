@@ -35,13 +35,14 @@ function HomePage() {
             search()
         } else {
             if (logos.length === 0) {
-                console.log("cositas")
+                // console.log("cositas")
+                // console.log(comicData)
                 const comicsHome = [];
                 setDatasCard(false);
                 for (let i = 0; i < comicData.length; i++) {
                     if (comicData[i].images.length !== 0) {
                         comicsHome.push({
-                            'id': i,
+                            'id': comicData[i].id,
                             'title': comicData[i].title,
                             'imagen': `${comicData[i].images[0].path}/portrait_uncanny.${comicData[i].images[0].extension}`,
                             'url': comicData[i].urls[0].url
@@ -67,7 +68,14 @@ function HomePage() {
     console.log(comicData)
 
 
-
+    if (comicData === "") {
+        return (<>
+            <div>
+                <div> cargando imagenes... </div>
+                <ReactLoading type="spinningBubbles" color="#ffffff" height="500" width="500" />
+            </div>
+        </>)
+    }
 
 
     return (

@@ -10,6 +10,7 @@ import FooterComponent from './components/FooterComponent/FooterComponent.js'
 import AuthenticationMail from './pages/AuthenticationMail/AuthenticationMail.js'
 //import {useFirebaseApp} from 'reactfire'
 import FavoritesComics from "./pages/Favorites/FavoritesComics";
+import DetallesComics from "./pages/DetallesComics/DetallesComics";
 
 function App() {
   //const firebase=useFirebaseApp();
@@ -35,6 +36,7 @@ function App() {
             <Route path="/buscar" element={<BuscarComponent />} />
             <Route path="/Authentication" element={<AuthenticationMail/>}/>
             <Route path="/FavoritesComics" element={<FavoritesComics/>}/>
+            <Route path="/Details/:id" element={<DetallesComics/>}/>
           </Routes>
         
       </div>

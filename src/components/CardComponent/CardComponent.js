@@ -1,18 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './CardComponent.css'
 
-function CardComponent({Objeto}) {
+function CardComponent({ Objeto }) {
     return (
         <div className="centered">
             <section className="cards">
-                <a href={Objeto.url}> 
-                    <article className="card">
-                        <header className="title-header-comic" >{Objeto.title}</header>
-                        <img className="images-slider" src={Objeto.imagen} alt={Objeto.imagen} />
-                        {/* <p>Click for web site</p> */}
 
-                    </article>
-                    </a>
+
+                <article className="card">
+                    
+                        <header className="title-header-comic" >{Objeto.title}</header>
+                   
+
+
+                    <Link to={`/Details/${Objeto.id}`}>
+                        <img className="images-slider" src={Objeto.imagen} alt={Objeto.imagen} />
+                    </Link>
+                    {/* <p>Click for web site</p> */}
+
+                </article>
+
             </section>
         </div>
     )

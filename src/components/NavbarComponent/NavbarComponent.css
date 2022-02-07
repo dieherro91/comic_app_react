@@ -4,7 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items:center;
-    font-family: comicFont;
+    font-family: 'komika_titleregular';
+    color:grey;
 }
 
 #marvel-logo{

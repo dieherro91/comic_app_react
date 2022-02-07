@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
 
-  import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 import { auth } from "../../firebase/firebase.init";
@@ -65,6 +65,8 @@ function AuthenticationMail() {
 
         signInWithPopup(auth, provider).then(result => {
             //setUser(result.user)
+            toast.success("Sign Complete");
+            navigate('/')
             console.log(result.user)
 
         }).catch((error) => {
