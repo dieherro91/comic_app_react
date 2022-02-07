@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './DetallesComics.css'
-import { Link, useParams } from "react-router-dom";
-import { SearchComicId } from "../../services/api";
+import { useParams } from "react-router-dom";
+import { SearchComicId, buscarComicsCharacterlist } from "../../services/api";
 import axios from "axios";
 import ReactLoading from "react-loading";
 
@@ -9,7 +9,7 @@ function DetallesComics() {
     const { id } = useParams()
 
     const [dataOneComic, setDataOneComic] = useState('');
-
+    const [comicCharacters, setComicCharacters] = useState([]);
 
     useEffect(() => {
         if (dataOneComic === '') {
@@ -23,6 +23,18 @@ function DetallesComics() {
 
             };
             searchComic()
+
+            const searchChractesComicId = async () => {
+                await axios.request(buscarComicsCharacterlist(id)).then(function (response) {
+
+                    setComicCharacters(response.data.data.results)
+                }).catch(function (error) {
+                    console.log(error)
+                })
+            };
+            searchChractesComicId();
+
+
         }
 
     }, [dataOneComic, id])
@@ -55,8 +67,8 @@ function DetallesComics() {
     }
 
     const listaVariants = variantes(variants);
-    console.log("adasd")
-    console.log(listaVariants)
+
+
     return (
         <>
             <div className="detail-container">
@@ -65,11 +77,27 @@ function DetallesComics() {
                 <div className="detail-subcontainer">
                     <img className="image-unique" alt="unique" src={`${dataOneComic[0].images[0].path}/portrait_uncanny.${dataOneComic[0].images[0].extension}`}></img>
                     <div className="test-detail">
-                        <div>
-                            <h3 className="titulos">issue Number</h3>
-                            <h2 className="titulos">{`#: ${dataOneComic[0].issueNumber}`}</h2>
+                        <h2 classname="subtitles">characters</h2>
+                        <div className="list-variants">
+
+                            {(comicCharacters.length) > 0 ? (<>
+
+                                {comicCharacters.map((comicCharacter) => (
+
+                                    
+                                        <h3 className="link-variants" key={comicCharacter.id}>{comicCharacter.name}</h3>
+                                    
+
+                                ))}
+
+                            </>) : (<>
+                                <h5 className="link-variants" >No characters availeable</h5>
+
+                            </>)}
+
+
                         </div>
-                        <h2>variants</h2>
+                        <h2 classname="subtitles">variants</h2>
                         <div className="list-variants">
 
                             {(listaVariants.length) > 0 ? (<>
@@ -97,7 +125,7 @@ function DetallesComics() {
                                 </h4>
                             </a>
                             <button>Favorites</button>
-                            
+
                         </div>
 
 

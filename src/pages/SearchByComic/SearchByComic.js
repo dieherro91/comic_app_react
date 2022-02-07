@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import './SearchByComic.css'
-import { buscarComicName } from '../../services/api.js'
+import React, { useState } from "react";
 import axios from 'axios'
 import ReactLoading from "react-loading";
-import kapow from '../../assets/images/kapow-1601675_1280.png'
 
 import CardComponent from "../../components/CardComponent/CardComponent";
+import { buscarComicName } from '../../services/api.js'
+import kapow from '../../assets/images/kapow-1601675_1280.png'
+import './SearchByComic.css'
+
 
 function SearchByComic() {
     const [dataComics, setDataComics] = useState('');
@@ -70,7 +71,7 @@ function SearchByComic() {
 
 
                         <h1>keep searching the best comics</h1>
-                        <img id='kapow' src={kapow} />
+                        <img id='kapow' src={kapow} alt="kaod"/>
 
                     </div>
                 </>) : (<>

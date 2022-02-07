@@ -34,7 +34,7 @@
     justify-content:space-between;
 }
 .list-variants{
-    height: 200px;
+    height: 100px;
     width: 100%;
     overflow-y:scroll;
 }
@@ -86,4 +86,7 @@
     width: 100%;
     align-items:center;
     justify-content:space-around;
+}
+.subtitles{
+    margin:0px
 }
