@@ -1,0 +1,10 @@
+
+
+
+.buttonFavoritet{
+    margin-left: 30px;
+}
+.buttonFavoritet:active .btn.active{
+    background-color:green;
+    outline: none;
+  }
