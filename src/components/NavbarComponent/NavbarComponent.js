@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import './NavbarComponent.css'
 import logoMarvel from '../../assets/images/marvel1.png'
 import LoginButtoncomponent from '../LoginButtoncomponent/LoginButtoncomponent.js'
 import LogoutButtonComponent from "../LogoutButtonComponent/LogoutButtonComponent";
 import { auth } from "../../firebase/firebase.init";
+import './NavbarComponent.css'
 
 function NavbarComponent() {
     const [isLog, setIsLog] = useState(false);
@@ -20,6 +20,7 @@ function NavbarComponent() {
             }
         })
     }, [])
+
     return (
         <div className="flexing-sidebar">
             <Link to='/'>
@@ -27,12 +28,9 @@ function NavbarComponent() {
             </Link>
             <Link className="nav-links" to="/SearchByCharacter">Characters</Link>
             <Link className="nav-links" to="/SearchByComic">Comics</Link>
-            <Link className="nav-links" to="/FavoritesComics">Favorites</Link>
-
-
-
             {
                 isLog ? (<>
+                    <Link className="nav-links" to="/FavoritesComics">Favorites</Link>
                     <LogoutButtonComponent />
                 </>) : (<>
                     <LoginButtoncomponent />

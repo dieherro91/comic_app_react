@@ -1,6 +1,7 @@
 import React from "react";
-import './LoginButtoncomponent.css'
 import { useNavigate } from 'react-router-dom';
+
+import './LoginButtoncomponent.css'
 
 function LoginButtoncomponent() {
     const navigate=useNavigate();
@@ -10,9 +11,7 @@ function LoginButtoncomponent() {
     }
     return (
         <div >
-            
             <button className="button-login" onClick={handleLogin}>Login</button>
-
         </div>
     )
 }

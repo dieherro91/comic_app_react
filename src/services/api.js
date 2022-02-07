@@ -1,20 +1,12 @@
-
 import crypto from "crypto-js";
-//import { functions } from 'firebase-functions'
-//const functions = require('firebase-functions');
-//import * as functions from 'firebase-functions';
-//import {functions} from 'firebase/functions';
-// import  functions from 'firebase-functions'
-// console.log("adasdad")
-//     console.log(functions.config().comics.nopublic)
+
 export const ObtenerComics= ()=>{
     const timestamp = Date.now();
-    const hashs = crypto.MD5(timestamp+process.env.REACT_APP_PRIVATE_KEY+process.env.REACT_APP_PUBLIC_KEY).toString()
+    const hashs = crypto.MD5(`${timestamp}${process.env.REACT_APP_PRIVATE_KEY}${process.env.REACT_APP_PUBLIC_KEY}`).toString()
     const options={
         method: 'GET',
         url: 'https://gateway.marvel.com/v1/public/comics',
         params: {
-          
           dateDescriptor:'thisMonth',
           orderBy:'onsaleDate',
           limit:'40',
@@ -28,7 +20,7 @@ export const ObtenerComics= ()=>{
 
 export const SearchComicId=(comicId)=>{
   const timestamp = Date.now();
-    const hashs = crypto.MD5(timestamp+process.env.REACT_APP_PRIVATE_KEY+process.env.REACT_APP_PUBLIC_KEY).toString()
+    const hashs = crypto.MD5(`${timestamp}${process.env.REACT_APP_PRIVATE_KEY}${process.env.REACT_APP_PUBLIC_KEY}`).toString()
     const options={
         method: 'GET',
         url: `https://gateway.marvel.com/v1/public/comics/${comicId}`,
@@ -42,7 +34,7 @@ export const SearchComicId=(comicId)=>{
 }
 export const buscarComicName= (name_comic)=>{
   const timestamp = Date.now();
-  const hashs = crypto.MD5(timestamp+process.env.REACT_APP_PRIVATE_KEY+process.env.REACT_APP_PUBLIC_KEY).toString()
+  const hashs = crypto.MD5(`${timestamp}${process.env.REACT_APP_PRIVATE_KEY}${process.env.REACT_APP_PUBLIC_KEY}`).toString()
   const options={
       method: 'GET',
       url: 'https://gateway.marvel.com/v1/public/comics',
@@ -60,7 +52,7 @@ export const buscarComicName= (name_comic)=>{
 
 export const buscarCharacter= (name_character)=>{
   const timestamp = Date.now();
-  const hashs = crypto.MD5(timestamp+process.env.REACT_APP_PRIVATE_KEY+process.env.REACT_APP_PUBLIC_KEY).toString()
+  const hashs = crypto.MD5(`${timestamp}${process.env.REACT_APP_PRIVATE_KEY}${process.env.REACT_APP_PUBLIC_KEY}`).toString()
   const options={
       method: 'GET',
       url: 'https://gateway.marvel.com/v1/public/characters',
@@ -75,9 +67,10 @@ export const buscarCharacter= (name_character)=>{
   };
   return options;
 };
+
 export const buscarCharacterComics= (id)=>{
   const timestamp = Date.now();
-  const hashs = crypto.MD5(timestamp+process.env.REACT_APP_PRIVATE_KEY+process.env.REACT_APP_PUBLIC_KEY).toString()
+  const hashs = crypto.MD5(`${timestamp}${process.env.REACT_APP_PRIVATE_KEY}${process.env.REACT_APP_PUBLIC_KEY}`).toString()
   const options={
       method: 'GET',
       url: `https://gateway.marvel.com/v1/public/characters/${id}/comics`,
@@ -94,7 +87,7 @@ export const buscarCharacterComics= (id)=>{
 
 export const buscarComicsCharacterlist= (id)=>{
   const timestamp = Date.now();
-  const hashs = crypto.MD5(timestamp+process.env.REACT_APP_PRIVATE_KEY+process.env.REACT_APP_PUBLIC_KEY).toString()
+  const hashs = crypto.MD5(`${timestamp}${process.env.REACT_APP_PRIVATE_KEY}${process.env.REACT_APP_PUBLIC_KEY}`).toString()
   const options={
       method: 'GET',
       url: `https://gateway.marvel.com/v1/public/comics/${id}/characters`,
@@ -108,4 +101,3 @@ export const buscarComicsCharacterlist= (id)=>{
   };
   return options;
 };
-//format=comic&formatType=comic&noVariants=false&dateDescriptor=thisMonth&hasDigitalIssue=true&orderBy=onsaleDate&limit=10&apikey=

@@ -20,7 +20,6 @@ function SearchByCharacter() {
         if(id !==''){
             await axios.request(buscarCharacterComics(id)).then(function (resp){
                 setDataComics(resp.data.data.results);
-                console.log(resp.data.data.results);
                 setIsSearching(false)
             }).catch(function (error) {
                 console.error(error);
@@ -38,22 +37,15 @@ function SearchByCharacter() {
         e.preventDefault()
         setIsSearching(true)
         await axios.request(buscarCharacter(inputSearch)).then(function (response) {
-            
             if(response.data.data.results.length===0){
                 toast.error("Character not found ~(T w T)~ ")
             }else{
             setId(response.data.data.results[0].id);            
-            //console.log(response.data.data.results[0].id)
-            //console.log(response)
-            console.log(id)
             }
-            
         }).catch(function (error) {
             console.error(error);
         });
-        
-        
-    }
+    };
     if (dataComics !== '') {
         var comicsSearch = []
         for (let i = 0; i < dataComics.length; i++) {
@@ -64,27 +56,23 @@ function SearchByCharacter() {
                     'title': dataComics[i].title,
                     'imagen': `${dataComics[i].images[0].path}/portrait_uncanny.${dataComics[i].images[0].extension}`,
                     'url': dataComics[i].urls[0].url
-
                 });
             };
-
-
         };
     };
-    console.log("asdasdasddddddddddddddddddddd")
-    console.log(comicsSearch);
+
     return (<>
         <div className="mainContainerSearch">
         <ToastContainer position="top-center"
-                            autoClose={3000}
-                            hideProgressBar={false}
-                            newestOnTop={false}
-                            closeOnClick
-                            rtl={false}
-                            pauseOnFocusLoss
-                            draggable
-                            pauseOnHover
-            />
+                        autoClose={3000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        />
 
             <div className="search">
                 <h2>Search the latest comics of your favorite character</h2>
@@ -95,18 +83,13 @@ function SearchByCharacter() {
                     </form>
 
                 </div>
-
-
             </div>
 
             <div className="ContainerContent">
                 {dataComics === '' ? (<>
                     <div className="initial-page">
-
-
                         <h1>keep searching the best comics</h1>
                         <img id='kapow' src={kapow} alt="kaod" />
-
                     </div>
                 </>) : (<>
                     {isSearching ? (<>
@@ -116,18 +99,12 @@ function SearchByCharacter() {
                         </div>
 
                     </>) : (<>
-
-
                         {comicsSearch.map((comic) => (
                             <CardComponent className="cards-search" key={comic.id} Objeto={comic} />
                         ))}
-
                     </>)}
 
                 </>)}
-
-
-
             </div>
         </div>
     </>)
